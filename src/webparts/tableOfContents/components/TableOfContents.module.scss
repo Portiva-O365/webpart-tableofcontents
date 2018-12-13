@@ -1,0 +1,72 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+.tableOfContents {
+    .container {
+        // margin-left: -25px;
+        z-index: 99;
+        margin-left: -37px;
+        margin-top: -13px;
+    }
+    .fixedContainer {
+        position: fixed;
+        background-color: white;
+        border: 1px solid #f1f1f1;
+    }
+    .row {
+        @include ms-Grid-row;
+        // @include ms-fontColor-white;
+        // background-color: $ms-color-themeDark;
+        padding: 0px;
+    }
+    .column {
+        @include ms-Grid-col;
+        @include ms-lg10;
+        @include ms-xl8;
+        @include ms-xlPush2;
+        @include ms-lgPush1;
+    }
+    .title {
+        @include ms-font-xxl;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    .subTitle {
+        @include ms-font-l;
+    }
+    .description {
+        @include ms-font-l;
+    }
+    .tocItem {
+        @include ms-font-m;
+        padding-bottom: 10px;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .tocItem .tocIcon {
+        position: relative;
+        top: 2px;
+        padding-right: 10px;
+    }
+    .tocItem .tocItemText {
+        margin: 0px;
+    }
+    .tocItem a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .tocInEditModeDescription {
+        @include ms-font-s;
+        padding-bottom: 10px;
+    }
+    .tocItemBackToPreviousPage {
+        border-top: 1px solid #f1f1f1;
+        padding-top: 10px;
+    }
+    .textItemBackToTop {
+        border-bottom: 1px solid #f1f1f1;
+        padding-bottom: 10px;
+        text-align: right;
+        font-size: small;
+    }
+}

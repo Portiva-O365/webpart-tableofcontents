@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+    "id": "3b4fda2d-a2a2-434f-a9b4-f87ed33e7f61",
+    "alias": "PortivaTableOfContents",
+    "componentType": "WebPart",
+
+    "version": "*",
+    "manifestVersion": 2,
+
+    "preconfiguredEntries": [{
+        "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+        "group": { "default": "Other" },
+        "title": {
+            "default": "Portiva Table of Contents",
+            "nl-nl": "Portiva Inhoudsopgave"
+        },
+        "description": {
+            "default": "Generates a table of contents on the page.",
+            "nl-nl": "Maakt automatisch een inhoudsopgave van de huidige pagina."
+        },
+        "officeFabricIconFontName": "CustomList",
+        "properties": {
+            "baseTag": "div.CanvasSection div.ControlZone div.ControlZone-control",
+            "htmlTag": "Heading 2",
+            "showBackToTop": false,
+            "backToTopText": "Terug naar boven",
+            "showTOCHeading": true,
+            "headingText": "Inhoudsopgave",
+            "showBackToPreviousPage": false,
+            "backToPreviousText": "Terug naar vorige pagina",
+            "floatTOC": false,
+            "iconTOCItem": "ChevronRight",
+            "iconPreviousPage": "ChevronLeft",
+            "tocBackgroundColor": "Transparent",
+            "buttonCopySetting": "",
+            "buttonPasteSettings": ""
+        }
+    }]
+}
