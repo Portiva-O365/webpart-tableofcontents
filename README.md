@@ -1,25 +1,25 @@
-# Inhoudsopgave web part
+# Table of Contents web part
 
-Het Inhoudsopgave web part toont op een modern page een inhoudsopgave van alle kopteksten/paragrafen op de pagina. Wanneer een eindgebruiker klikt op een item in de inhoudsopgave dan springt de pagina naar de kop in de pagina.  
+The Table of Contents web part shows on a modern page a table of contents of all headings / paragraphs on the page. When the end user clicks an item in the table of contents, the page jumps to the head in the page. 
 
 ## Repository
 
-- De repository is hierboven te vinden > [hoe te gebruiken][link1]?
-- [SPPKG files](https://github.com/Portiva-O365/webpart-tableofcontents/tree/master/sharepoint) > [hoe te gebruiken][link2]?
+- Repository can be found here > [How to use the repository][link1]?
+- [SPPKG files](https://github.com/Portiva-O365/webpart-tableofcontents/tree/master/sharepoint) > [How to use the package][link2]?
 
-## Functionaliteiten
+## Settings
 
-- genereert automatisch een inhoudsopgave op een modern page
-- beschikbaar in Nederlands en Engels
-- mogelijkheid tot aangeven welke koppen - kop 1, 2 of 3 - gebruikt moeten worden
-- mogelijkheid om onder elke paragraaf een link _Terug naar boven_ te genereren 
-- mogelijkheid om titel, labels en iconen aan te passen
-- mogelijkheid om achtergrond kleur van de inhoudsopgave aan te passen
-- mogelijkheid om instellingen te exporteren en te importeren, handig om dezelfde instellingen op andere pagina's snel toe te passen
+- automatically generates a table of contents on a modern page
+- possibility to indicate which heads - head 1, 2 or 3 - should be used
+- possibility to generate a link *Back to Top* under each paragraph
+- possibility to adjust title, labels and icons
+- possibility to adjust the background color of the table of contents
+- possibility to export and import settings, useful to quickly apply the same settings on other pages
+- available in Dutch and English
 
-## Afbeeldingen
+## Images
 
-![Pagina met inhoudsopgave web part][image01]
+![Page with Table of Contents web part][image01]
 ![Web Part Configuratie 1][image02]
 ![Web Part Configuratie 2][image03]
 
@@ -27,9 +27,9 @@ Het Inhoudsopgave web part toont op een modern page een inhoudsopgave van alle k
 
 > THIS CODE IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
 
-[image01]: ./afbeeldingen/TableOfContents01.png
-[image02]: ./afbeeldingen/TableOfContents02.png
-[image03]: ./afbeeldingen/TableOfContents03.png
+[image01]: ./images/TableOfContents01.png
+[image02]: ./images/TableOfContents02.png
+[image03]: ./images/TableOfContents03.png
 
 [link1]: https://github.com/Portiva-O365/portfolio/blob/master/repository-gebruiken.md
 [link2]: https://github.com/Portiva-O365/portfolio/blob/master/repository-packages.md
