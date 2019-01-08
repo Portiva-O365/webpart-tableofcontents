@@ -22,6 +22,7 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
     // render the main web part
     const element: React.ReactElement<ITableOfContentsProps> = React.createElement(
       TableOfContents, {
+        context: this.context,
         baseTag: this.properties.baseTag,
         htmlTag: this.properties.htmlTag,
         showBackToTop: this.properties.showBackToTop,

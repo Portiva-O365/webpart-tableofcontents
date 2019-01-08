@@ -1,21 +1,21 @@
 /* tslint:disable */
 require('./TableOfContents.module.css');
 const styles = {
-  tableOfContents: 'tableOfContents_dcb86cf6',
-  container: 'container_dcb86cf6',
-  fixedContainer: 'fixedContainer_dcb86cf6',
-  row: 'row_dcb86cf6',
-  column: 'column_dcb86cf6',
-  'ms-Grid': 'ms-Grid_dcb86cf6',
-  title: 'title_dcb86cf6',
-  subTitle: 'subTitle_dcb86cf6',
-  description: 'description_dcb86cf6',
-  tocItem: 'tocItem_dcb86cf6',
-  tocIcon: 'tocIcon_dcb86cf6',
-  tocItemText: 'tocItemText_dcb86cf6',
-  tocInEditModeDescription: 'tocInEditModeDescription_dcb86cf6',
-  tocItemBackToPreviousPage: 'tocItemBackToPreviousPage_dcb86cf6',
-  textItemBackToTop: 'textItemBackToTop_dcb86cf6',
+  tableOfContents: 'tableOfContents_4da0342f',
+  container: 'container_4da0342f',
+  fixedContainer: 'fixedContainer_4da0342f',
+  row: 'row_4da0342f',
+  column: 'column_4da0342f',
+  'ms-Grid': 'ms-Grid_4da0342f',
+  title: 'title_4da0342f',
+  subTitle: 'subTitle_4da0342f',
+  description: 'description_4da0342f',
+  tocItem: 'tocItem_4da0342f',
+  tocIcon: 'tocIcon_4da0342f',
+  tocItemText: 'tocItemText_4da0342f',
+  tocInEditModeDescription: 'tocInEditModeDescription_4da0342f',
+  tocItemBackToPreviousPage: 'tocItemBackToPreviousPage_4da0342f',
+  textItemBackToTop: 'textItemBackToTop_4da0342f',
 };
 
 export default styles;

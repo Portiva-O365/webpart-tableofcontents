@@ -57,7 +57,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
       <div>
         {this._renderTitle()}
         {
-          DisplayMode.Edit ? this._renderTOCItemsInEditMode() : this._renderTOCItems()
+          document.location.href.indexOf("Mode=Edit") !== -1 ? this._renderTOCItemsInEditMode() : this._renderTOCItems()
         }
         {this._renderBackToPreviousPage()}
       </div>
