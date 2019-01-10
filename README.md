@@ -31,6 +31,6 @@ The Table of Contents web part shows on a modern page a table of contents of all
 [image02]: ./images/TableOfContents02.png
 [image03]: ./images/TableOfContents03.png
 
-[link1]: https://github.com/Portiva-O365/portfolio/blob/master/repository-gebruiken.md
+[link1]: https://github.com/Portiva-O365/portfolio/blob/master/repository-usage.md
 [link2]: https://github.com/Portiva-O365/portfolio/blob/master/repository-packages.md
 
