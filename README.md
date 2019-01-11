@@ -7,15 +7,15 @@ The Table of Contents web part shows on a modern page a table of contents of all
 - Repository can be found here > [How to use the repository][link1]?
 - [SPPKG files](https://github.com/Portiva-O365/webpart-tableofcontents/tree/master/sharepoint) > [How to use the package][link2]?
 
-## Settings
+## Features
 
-- automatically generates a table of contents on a modern page
-- possibility to indicate which heads - head 1, 2 or 3 - should be used
-- possibility to generate a link *Back to Top* under each paragraph
-- possibility to adjust title, labels and icons
-- possibility to adjust the background color of the table of contents
-- possibility to export and import settings, useful to quickly apply the same settings on other pages
-- available in Dutch and English
+- Automatic generator for a table of contents on a modern page
+- Indicate which texttype - i.e. Heading 1, 2 or 3 - should be used
+- Generate a link *Back to Top* under each paragraph option
+- Adjust title, labels and icons options
+- Adjust the background color of the table of contents option
+- Export and import settings, useful to quickly apply the same settings on other pages option
+- Multiple languages supported; **Dutch** and **English**
 
 ## Images
 
@@ -33,4 +33,3 @@ The Table of Contents web part shows on a modern page a table of contents of all
 
 [link1]: https://github.com/Portiva-O365/portfolio/blob/master/repository-usage.md
 [link2]: https://github.com/Portiva-O365/portfolio/blob/master/repository-packages.md
-

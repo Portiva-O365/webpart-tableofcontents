@@ -7,7 +7,6 @@ import {
   PropertyPaneTextField,
   PropertyPaneToggle,
   PropertyPaneDropdown,
-  PropertyPaneHorizontalRule,
   PropertyPaneButton
 } from "@microsoft/sp-webpart-base";
 
@@ -63,9 +62,9 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
               groupFields: [
                 PropertyPaneDropdown("htmlTag", {
                   label: strings.htmlTag, options: [
-                    { key: "Heading 1", text: "Heading 1" },
-                    { key: "Heading 2", text: "Heading 2" },
-                    { key: "Heading 3", text: "Heading 3" }
+                    { key: "h2", text: strings.textStyleHeading1Text },
+                    { key: "h3", text: strings.textStyleHeading2Text },
+                    { key: "h4", text: strings.textStyleHeading3Text }
                   ]
                 }),
                 PropertyPaneToggle("showTOCHeading", {
@@ -73,7 +72,8 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
                 }),
                 PropertyPaneTextField("headingText", {
                   label: strings.headingText, disabled: !this.properties.showTOCHeading,
-                  onGetErrorMessage: this._checkToggleField
+                  onGetErrorMessage: this._checkToggleField,
+                  value : strings.headingTextDefaultValue
                 }),
                 PropertyPaneToggle("showBackToPreviousPage", {
                   label: strings.showBackToPreviousPage
@@ -81,7 +81,8 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
                 PropertyPaneTextField("backToPreviousText", {
                   label: strings.backToPreviousText, description: strings.backToPreviousFieldDescription,
                   disabled: !this.properties.showBackToPreviousPage,
-                  onGetErrorMessage: this._checkToggleField
+                  onGetErrorMessage: this._checkToggleField,
+                  value: strings.backToPreviousDefaultValue
                 })
               ]
             },
@@ -95,7 +96,8 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
                 PropertyPaneTextField("backToTopText", {
                   label: strings.backToTopText, description: strings.backToTopFieldDescription,
                   disabled: !this.properties.showBackToTop,
-                  onGetErrorMessage: this._checkToggleField
+                  onGetErrorMessage: this._checkToggleField,
+                  value: strings.backToTopDefaultValue
                 })
               ]
             }
@@ -190,5 +192,4 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
       return "";
     }
   }
-
 }
