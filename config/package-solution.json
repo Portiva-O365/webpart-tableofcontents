@@ -3,10 +3,10 @@
     "solution": {
         "name": "Portiva Table of Contents",
         "id": "36ae2785-7888-4891-b568-2b9b876bce35",
-        "version": "1.0.0.14",
+        "version": "1.0.0.15",
         "includeClientSideAssets": true
     },
     "paths": {
-        "zippedPackage": "solution/portiva-tableofcontents.sppkg"
+        "zippedPackage": "solution 1.0.0.15/portiva-tableofcontents.sppkg"
     }
 }
