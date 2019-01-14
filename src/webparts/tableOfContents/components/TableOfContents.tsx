@@ -13,7 +13,6 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
   }
 
   public render(): React.ReactElement<ITableOfContentsProps> {
-
     // set background style of the container
     const containerStyle: any = {
       backgroundColor: this.props.tocBackgroundColor === "" ? "Transparent" : this.props.tocBackgroundColor,
@@ -25,8 +24,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
       return (
         <div className={styles.tableOfContents}>
           <div
-            className={
-              `ms-fadeIn400 ${styles.container} ${this.props.floatTOC && DisplayMode.Read ? styles.fixedContainer : ""}`}
+            className={`ms-fadeIn400 ${styles.container} ${this.props.floatTOC && DisplayMode.Read ? styles.fixedContainer : ""}`}
             style={containerStyle}>
             <div className={styles.row}>
               <div className={styles.column}>
@@ -65,8 +63,10 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
   } // end: _renderTOC
 
   private _renderTOCItems = (): JSX.Element => {
+
     // get all tags from text on this page
     const items: any = document.querySelectorAll(`${this.props.baseTag} ${this._getTagToGenerateTOCFrom()}`);
+
     // iterate over each found item
     if (items && items.length > 0) {
       // get the item for TOC
@@ -76,6 +76,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
 
         // get anchor ID for source and target
         let anchorID: string = this._randomKey();
+
         // get #top anchor id
         if (index === 0) {
           anchorID = "TOCTop";
@@ -90,7 +91,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
           items[index].outerHTML = `
             <div style="border-bottom: 1px solid #f1f1f1; padding-bottom: 10px; text-align: right; font-size: small;">
               <a href="#TOCTop" style="text-decoration: none; cursor: pointer;">
-                ${this.props.backToTopText}
+                ${this.props.backToTopText.trim() === "" ? strings.backToTopDefaultValue : this.props.backToTopText }
               </a>
             </div>
             ${items[index].outerHTML}
@@ -121,20 +122,21 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
   } // end: _renderTOCItems
 
   private _renderTOCItemsInEditMode = (): JSX.Element => {
-    // called whenever the page is in edit mode
+    // called when page is in edit mode
     return (
       <div>
         <div className={styles.tocInEditModeDescription}>
           {strings.pageInEditMode}
         </div>
-        {this._renderTOCItem({ text: "Sample Item", icon: this.props.iconTOCItem })}
-        {this._renderTOCItem({ text: "Sample Item", icon: this.props.iconTOCItem })}
-        {this._renderTOCItem({ text: "Sample Item", icon: this.props.iconTOCItem })}
+        {this._renderTOCItem({ text: strings.sampleItemLabel, icon: this.props.iconTOCItem })}
+        {this._renderTOCItem({ text: strings.sampleItemLabel, icon: this.props.iconTOCItem })}
+        {this._renderTOCItem({ text: strings.sampleItemLabel, icon: this.props.iconTOCItem })}
       </div>
     );
   } // end: _renderTOCItemsInEditMode
 
   private _renderTOCItem = (tocItemProps: ITOCItem): JSX.Element => {
+
     // return HTML for single TOC item with parameters filled in
     return (
       <div className={`${styles.tocItem} ${tocItemProps.isBackToPreviousPage ? styles.tocItemBackToPreviousPage : ""}`}
@@ -159,7 +161,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
     if (this.props.showTOCHeading) {
       return (
         <div className={styles.title}>
-          {this.props.headingText}
+          {this.props.headingText.trim() === "" ? strings.headingTextDefaultValue : this.props.headingText}
         </div>
       );
     } else {
@@ -170,7 +172,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
   private _renderBackToPreviousPage = (): JSX.Element => {
     if (this.props.showBackToPreviousPage) {
       return this._renderTOCItem({
-        text: this.props.backToPreviousText,
+        text: this.props.backToPreviousText.trim() === "" ? strings.backToPreviousDefaultValue : this.props.backToPreviousText,
         icon: this.props.iconPreviousPage,
         onClickAction: this._onClickBackToPreviousPage,
         isBackToPreviousPage: true
@@ -184,13 +186,8 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
 
   private _getTagToGenerateTOCFrom = (): string => {
     // return the HTML tag used to generate TOC items for, depends in user settings
-    switch (this.props.htmlTag.toLowerCase()) {
-      case "heading 1": return "h2";
-      case "heading 2": return "h3";
-      case "heading 3": return "h4";
-      default:
-      // you should not be here...
-    }
+    return this.props.htmlTag.toLowerCase();
+    
   } // end: _getTagToGenerateTOCFrom
 
   private _randomKey = (): string => {
@@ -207,5 +204,4 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
       window.history.back();
     }
   }
-
 }
