@@ -21,7 +21,6 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
     // render the main web part
     const element: React.ReactElement<ITableOfContentsProps> = React.createElement(
       TableOfContents, {
-        context: this.context,
         baseTag: this.properties.baseTag,
         htmlTag: this.properties.htmlTag,
         showBackToTop: this.properties.showBackToTop,
@@ -33,7 +32,8 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
         floatTOC: this.properties.floatTOC,
         iconTOCItem: this.properties.iconTOCItem,
         iconPreviousPage: this.properties.iconPreviousPage,
-        tocBackgroundColor: this.properties.tocBackgroundColor
+        tocBackgroundColor: this.properties.tocBackgroundColor,
+        displayMode: this.displayMode
       }
     );
 

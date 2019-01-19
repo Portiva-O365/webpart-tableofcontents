@@ -1,6 +1,6 @@
+import { DisplayMode } from "@microsoft/sp-core-library";
 
 export interface ITableOfContentsWebPartProps {
-  context: any;
   baseTag: string;
   htmlTag: string;
   showBackToTop: boolean;
@@ -15,6 +15,7 @@ export interface ITableOfContentsWebPartProps {
   tocBackgroundColor: string;
   buttonCopySetting?: string;
   buttonPasteSettings?: string;
+  displayMode?: DisplayMode;
 }
 
 export interface ITableOfContentsProps extends ITableOfContentsWebPartProps { }
