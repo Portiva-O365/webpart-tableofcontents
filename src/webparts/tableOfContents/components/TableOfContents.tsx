@@ -8,6 +8,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
 
   constructor(props: any) {
     super(props);
+
     // set state
     this.state = { isTextPresent: false };
   }
@@ -24,7 +25,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
       return (
         <div className={styles.tableOfContents}>
           <div
-            className={`ms-fadeIn400 ${styles.container} ${this.props.floatTOC && DisplayMode.Read ? styles.fixedContainer : ""}`}
+            className={`ms-fadeIn400 ${styles.container} ${this.props.floatTOC && this.props.displayMode === DisplayMode.Read ? styles.fixedContainer : ""}`}
             style={containerStyle}>
             <div className={styles.row}>
               <div className={styles.column}>
@@ -55,7 +56,8 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
       <div>
         {this._renderTitle()}
         {
-          document.location.href.indexOf("Mode=Edit") !== -1 ? this._renderTOCItemsInEditMode() : this._renderTOCItems()
+          document.location.href.indexOf("Mode=Edit") !== -1 || this.props.displayMode === DisplayMode.Edit
+           ? this._renderTOCItemsInEditMode() : this._renderTOCItems()
         }
         {this._renderBackToPreviousPage()}
       </div>
@@ -82,8 +84,10 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
           anchorID = "TOCTop";
         }
 
+        let headerText = items[index].innerText;
+
         // text: add anchor ref to item, nb: use style instead of class since classes are compiled at runtime!
-        items[index].innerHTML = `<a style="text-decoration:none; color: inherit;" id="${anchorID}">${items[index].innerText}</a>`;
+        items[index].innerHTML = `<a style="text-decoration:none; color: inherit;" id="${anchorID}">${headerText}</a>`;
 
         // text: add back to top item only for paragraphes after the first
         if (index > 0 && this.props.showBackToTop) {
@@ -101,7 +105,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
         // toc: add item to JSX for rendering later
         itemJSX.push(
           this._renderTOCItem(
-            { text: items[index].innerText, icon: this.props.iconTOCItem, anchorID: anchorID }
+            { text: headerText, icon: this.props.iconTOCItem, anchorID: anchorID }
           ));
       }
 
@@ -140,7 +144,7 @@ export default class TableOfContents extends React.Component<ITableOfContentsPro
     // return HTML for single TOC item with parameters filled in
     return (
       <div className={`${styles.tocItem} ${tocItemProps.isBackToPreviousPage ? styles.tocItemBackToPreviousPage : ""}`}
-        onClick={tocItemProps.onClickAction} >
+        onClick={tocItemProps.onClickAction}>
         <span className={styles.tocIcon}>
           <i className={`ms-Icon ms-Icon--${tocItemProps.icon}`} aria-hidden="true"></i>
         </span>
